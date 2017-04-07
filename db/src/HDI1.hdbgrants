@@ -1,0 +1,14 @@
+{
+	"logical-HDI1-grantor": {
+		"object_owner": { 
+			"container_roles": [
+				"xsaSynonymsHDI1.db::external_access_g#"
+			]
+		},
+		"application_user": {
+			"container_roles": [
+				"xsaSynonymsHDI1.db::external_access"
+			]
+		}
+	}
+}

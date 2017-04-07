@@ -1,3 +1,29 @@
 _schema-version: '2.0'
 ID: xsaSynonymsHDI2
 version: 0.0.1
+
+modules:
+ - name: db
+   type: hdb
+   path: db
+   requires:
+    - name: hdi-container
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+    - name: XSA_DEV-abcdefghijklmnopqrstuvwxyz-xsaSynonymsHDI1-hdi-container
+      group: SERVICE_REPLACEMENTS
+      properties: 
+        key: logical-HDI1-grantor
+        service: ~{HDI1-grantor-service}
+        
+resources:
+ - name: hdi-container
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+ - name: XSA_DEV-abcdefghijklmnopqrstuvwxyz-xsaSynonymsHDI1-hdi-container
+   properties:
+     HDI1-grantor-service: ${service-name}
+#   parameters:
+#     service-name: myapp2-hdi-container
+   type: org.cloudfoundry.existing-service
