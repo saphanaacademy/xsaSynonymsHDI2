@@ -27,3 +27,4 @@ resources:
 #   parameters:
 #     service-name: myapp2-hdi-container
    type: org.cloudfoundry.existing-service
+   
